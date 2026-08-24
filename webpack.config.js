@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         test: /\.(ts)x?$/,
-        exclude: /node_modules/,
+        exclude: /node_modules|\.stories\.(ts|tsx)$/,
         use: {
           loader: 'ts-loader'
         }
@@ -83,7 +83,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   devServer: {
     static: path.join(__dirname, './dist'),

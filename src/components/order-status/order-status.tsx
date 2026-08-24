@@ -5,13 +5,19 @@ import { OrderStatusUI } from '@ui';
 const statusText: { [key: string]: string } = {
   pending: 'Готовится',
   done: 'Выполнен',
-  created: 'Создан'
+  created: 'Создан',
+  cancelled: 'Отменён',
+  canceled: 'Отменён'
 };
 
 export const OrderStatus: FC<OrderStatusProps> = ({ status }) => {
   let textStyle = '';
   switch (status) {
     case 'pending':
+      textStyle = '#E52B1A';
+      break;
+    case 'cancelled':
+    case 'canceled':
       textStyle = '#E52B1A';
       break;
     case 'done':
