@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         test: /\.(ts)x?$/,
-        exclude: /node_modules|\.stories\.(ts|tsx)$/,
+        exclude: /node_modules|\.stories\.(ts|tsx)$|[\\/]tests[\\/]/,
         use: {
           loader: 'ts-loader'
         }
